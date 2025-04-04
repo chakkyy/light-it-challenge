@@ -1,6 +1,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { BrowserRouter } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import { Analytics } from '@vercel/analytics/react';
 
 import { ThemeWrapper } from './components/providers/ThemeWrapper';
 import { PatientProvider } from './contexts/PatientContext';
@@ -30,6 +31,7 @@ function App() {
               <PatientProvider>
                 <ImageCacheProvider>
                   <PatientFiltersProvider>
+                    <Analytics />
                     <PatientManager />
                     <Toaster position="bottom-right" />
                   </PatientFiltersProvider>
